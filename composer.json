@@ -1,5 +1,5 @@
 {
-    "name": "sminnee/silverstripe-verbosefields",
+    "name": "sunnysideup/silverstripe-verbosefields",
     "description": "Silverstripe admin fields that let you provide more description content",
     "type": "silverstripe-vendormodule",
     "require": {
