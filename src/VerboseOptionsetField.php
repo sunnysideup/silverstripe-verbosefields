@@ -1,6 +1,6 @@
 <?php
 
-namespace Sminnee\VerboseFields;
+namespace Sunnysideup\VerboseFields;
 
 use SilverStripe\Forms\OptionsetField;
 use SilverStripe\View\Requirements;
