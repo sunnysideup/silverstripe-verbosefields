@@ -14,7 +14,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Sminene\\VerboseFields\\": "src/"
+            "Sunnysideup\\VerboseFields\\": "src/"
         }
     },
     "extra": {
