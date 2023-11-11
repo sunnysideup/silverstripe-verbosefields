@@ -15,8 +15,8 @@ class VerboseOptionsetField extends OptionsetField
 {
     function Field($properties = [])
     {
-        Requirements::css('sminnee/silverstripe-verbosefields:css/verbosefields.css');
-        Requirements::javascript('sminnee/silverstripe-verbosefields:javascript/verbosefields.js');
+        Requirements::css('sunnysideup/silverstripe-verbosefields:css/verbosefields.css');
+        Requirements::javascript('sunnysideup/silverstripe-verbosefields:javascript/verbosefields.js');
         return parent::Field($properties);
     }
 
