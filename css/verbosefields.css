@@ -1,7 +1,16 @@
 /**
  * VerboseOptionsetField
  */
-.verbose-description {
+.verboseoptionset.field .verbose-description
+ {
   float: right;
-  width: 70%;
+  max-width: 300px;
+}
+
+.verboseoptionset.field .verbose-description img {
+    max-width: 300px;
+}
+.verboseoptionset.field .form__field-holder {
+    max-height: 70vh;
+    overflow: auto;
 }
