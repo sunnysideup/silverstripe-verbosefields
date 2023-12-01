@@ -13,19 +13,21 @@ use SilverStripe\View\ArrayData;
  */
 class VerboseOptionsetField extends OptionsetField
 {
-    function Field($properties = [])
+    public function Field($properties = [])
     {
         Requirements::css('sunnysideup/silverstripe-verbosefields:css/verbosefields.css');
         Requirements::javascript('sunnysideup/silverstripe-verbosefields:javascript/verbosefields.js');
         return parent::Field($properties);
     }
 
+    protected $sourceDescriptions = [];
+
     /**
      * Provide a map of option value => description
      * Description should be HTML
      * @param array<int|string,string> $sourceDescriptions
      */
-    function setSourceDescriptions(array $sourceDescriptions): VerboseOptionsetField
+    public function setSourceDescriptions(array $sourceDescriptions): VerboseOptionsetField
     {
         $this->sourceDescriptions = $sourceDescriptions;
         return $this;
