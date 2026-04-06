@@ -1,26 +1,26 @@
 {
-    "name": "sunnysideup/silverstripe-verbosefields",
-    "description": "Silverstripe admin fields that let you provide more description content",
-    "type": "silverstripe-vendormodule",
-    "require": {
-        "silverstripe/cms": "^4 || ^5"
-    },
-    "license": "BSD-3-Clause",
-    "authors": [
-        {
-            "name": "Sam Minnee",
-            "email": "sam@silverstripe.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Sunnysideup\\VerboseFields\\": "src/"
-        }
-    },
-    "extra": {
-        "expose": [
-            "javascript",
-            "css"
-        ]
+  "name": "sunnysideup/silverstripe-verbosefields",
+  "description": "Silverstripe admin fields that let you provide more description content",
+  "type": "silverstripe-vendormodule",
+  "require": {
+    "silverstripe/cms": "^4 || ^5"
+  },
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Sam Minnee",
+      "email": "sam@silverstripe.com"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Sunnysideup\\VerboseFields\\": "src/"
+    }
+  },
+  "extra": {
+    "expose": [
+      "javascript",
+      "css"
+    ]
+  }
 }
