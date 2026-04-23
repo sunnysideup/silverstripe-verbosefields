@@ -2,6 +2,7 @@
 
 namespace Sunnysideup\VerboseFields;
 
+use Override;
 use SilverStripe\Model\ArrayData;
 use SilverStripe\Forms\OptionsetField;
 use SilverStripe\View\Requirements;
@@ -13,6 +14,7 @@ use SilverStripe\ORM\FieldType\DBHTMLText;
  */
 class VerboseOptionsetField extends OptionsetField
 {
+    #[Override]
     public function Field($properties = [])
     {
         Requirements::css('sunnysideup/silverstripe-verbosefields:css/verbosefields.css');
@@ -39,8 +41,9 @@ class VerboseOptionsetField extends OptionsetField
      * @param mixed $value Value of the option
      * @param string $title Title of the option
      * @param boolean $odd True if this should be striped odd. Otherwise it should be striped even
-     * @return \SilverStripe\Model\ArrayData Field option
+     * @return ArrayData Field option
      */
+    #[Override]
     protected function getFieldOption($value, $title, $odd)
     {
         $description = DBField::create_field(
