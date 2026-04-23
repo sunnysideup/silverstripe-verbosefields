@@ -2,17 +2,19 @@
 
 namespace Sunnysideup\VerboseFields;
 
+use Override;
+use SilverStripe\Model\ArrayData;
 use SilverStripe\Forms\OptionsetField;
 use SilverStripe\View\Requirements;
 use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\ORM\FieldType\DBHTMLText;
-use SilverStripe\View\ArrayData;
 
 /**
  * Optionset field with a right hand paragraph in the admin, describing the option you are hovering on or have selected
  */
 class VerboseOptionsetField extends OptionsetField
 {
+    #[Override]
     public function Field($properties = [])
     {
         Requirements::css('sunnysideup/silverstripe-verbosefields:css/verbosefields.css');
@@ -41,22 +43,23 @@ class VerboseOptionsetField extends OptionsetField
      * @param boolean $odd True if this should be striped odd. Otherwise it should be striped even
      * @return ArrayData Field option
      */
+    #[Override]
     protected function getFieldOption($value, $title, $odd)
     {
         $description = DBField::create_field(
             DBHTMLText::class,
-            isset($this->sourceDescriptions[$value]) ? $this->sourceDescriptions[$value] : ''
+            $this->sourceDescriptions[$value] ?? ''
         );
 
-        return new ArrayData(array(
+        return ArrayData::create([
             'ID' => $this->getOptionID($value),
             'Class' => $this->getOptionClass($value, $odd),
             'Name' => $this->getOptionName(),
             'Value' => $value,
             'Description' => $description,
             'Title' => $title,
-            'isChecked' => $this->isSelectedValue($value, $this->Value()),
+            'isChecked' => $this->isSelectedValue($value, $this->getValue()),
             'isDisabled' => $this->isDisabledValue($value)
-        ));
+        ]);
     }
 }
