@@ -45,10 +45,10 @@ class VerboseOptionsetField extends OptionsetField
     {
         $description = DBField::create_field(
             DBHTMLText::class,
-            isset($this->sourceDescriptions[$value]) ? $this->sourceDescriptions[$value] : ''
+            $this->sourceDescriptions[$value] ?? ''
         );
 
-        return new ArrayData(array(
+        return ArrayData::create([
             'ID' => $this->getOptionID($value),
             'Class' => $this->getOptionClass($value, $odd),
             'Name' => $this->getOptionName(),
@@ -57,6 +57,6 @@ class VerboseOptionsetField extends OptionsetField
             'Title' => $title,
             'isChecked' => $this->isSelectedValue($value, $this->Value()),
             'isDisabled' => $this->isDisabledValue($value)
-        ));
+        ]);
     }
 }
