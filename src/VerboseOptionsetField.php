@@ -2,11 +2,11 @@
 
 namespace Sunnysideup\VerboseFields;
 
+use SilverStripe\Model\ArrayData;
 use SilverStripe\Forms\OptionsetField;
 use SilverStripe\View\Requirements;
 use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\ORM\FieldType\DBHTMLText;
-use SilverStripe\View\ArrayData;
 
 /**
  * Optionset field with a right hand paragraph in the admin, describing the option you are hovering on or have selected
@@ -39,7 +39,7 @@ class VerboseOptionsetField extends OptionsetField
      * @param mixed $value Value of the option
      * @param string $title Title of the option
      * @param boolean $odd True if this should be striped odd. Otherwise it should be striped even
-     * @return ArrayData Field option
+     * @return \SilverStripe\Model\ArrayData Field option
      */
     protected function getFieldOption($value, $title, $odd)
     {
@@ -55,7 +55,7 @@ class VerboseOptionsetField extends OptionsetField
             'Value' => $value,
             'Description' => $description,
             'Title' => $title,
-            'isChecked' => $this->isSelectedValue($value, $this->Value()),
+            'isChecked' => $this->isSelectedValue($value, $this->getValue()),
             'isDisabled' => $this->isDisabledValue($value)
         ]);
     }
